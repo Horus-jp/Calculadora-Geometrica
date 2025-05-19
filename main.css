@@ -1,0 +1,105 @@
+/* Archivo: estilos.css */
+
+/* GENERAL */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+header {
+  background-color: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+/* GRID (para layout principal) */
+main {
+  display: grid; /* ← GRID */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* FLEXBOX dentro de cada tarjeta */
+.card {
+  display: flex; /* ← FLEXBOX */
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #1e40af;
+}
+
+/* MEDIA QUERY para móviles */
+@media (max-width: 600px) {
+  /* ← MEDIA QUERY */
+  main {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 16px;
+  }
+}
+
+/* EXTRA: Clases dinámicas por JS */
+.usado {
+  border: 2px dashed #4ade80;
+}
+
+.activo {
+  background-color: #e0f2fe;
+}

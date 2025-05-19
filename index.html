@@ -1,0 +1,89 @@
+<!-- Archivo: index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Geometrica</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <h1>Calculadora Geométrica - Rodriguez Cortes Horus Fedor</h1>
+  </header>
+  <main>
+    <!-- Cuadrado -->
+    <div class="card" id="cuadrado">
+      <h2>Cuadrado</h2>
+      <input type="number" id="ladoCuadrado" placeholder="Lado">
+      <button onclick="calcCuadrado()">Calcular</button>
+      <p id="resCuadrado"></p>
+      <!-- Cuadrado -->
+      <img src="cuadrado.jpg" alt="Icono cuadrado">
+    </div>
+
+    <!-- Círculo -->
+    <div class="card" id="circulo">
+      <h2>Círculo</h2>
+      <input type="number" id="radioCirculo" placeholder="Radio">
+      <button onclick="calcCirculo()">Calcular</button>
+      <p id="resCirculo"></p>
+      <!-- Círculo -->
+      <img src="circulo.jpg" alt="Icono círculo">
+    </div>
+
+    <!-- Cubo -->
+    <div class="card" id="cubo">
+      <h2>Cubo</h2>
+      <input type="number" id="ladoCubo" placeholder="Lado">
+      <button onclick="calcCubo()">Calcular</button>
+      <p id="resCubo"></p>
+      <!-- Cubo -->
+      <img src="Cubo2.jpg" alt="Icono cubo">
+
+    </div>
+  </main>
+ 
+  <script>
+    
+
+    function calcCuadrado() {
+      let lado = parseFloat(document.getElementById('ladoCuadrado').value);
+      if (isNaN(lado)) {
+        alert('Ponle un número bro');
+        return;
+      }
+      let area = lado * lado;
+      let perimetro = lado * 4;
+      let msg = `Área: ${area}, Perímetro: ${perimetro}`;
+      document.getElementById('resCuadrado').textContent = msg;
+      document.getElementById('cuadrado').classList.add('usado');
+    }
+
+    function calcCirculo() {
+      let radio = parseFloat(document.getElementById('radioCirculo').value);
+      if (isNaN(radio)) {
+        alert('Sin radio no hay cálculo compa');
+        return;
+      }
+      let area = Math.PI * radio * radio;
+      let perimetro = 2 * Math.PI * radio;
+      let msg = `Área: ${area.toFixed(2)}, Circunferencia: ${perimetro.toFixed(2)}`;
+      document.getElementById('resCirculo').textContent = msg;
+    }
+
+    function calcCubo() {
+      let lado = parseFloat(document.getElementById('ladoCubo').value);
+      if (isNaN(lado)) {
+        alert('Falta el lado manito');
+        return;
+      }
+      let area = 6 * lado * lado;
+      let volumen = lado ** 3;
+      let msg = `Área: ${area}, Volumen: ${volumen}`;
+      document.getElementById('resCubo').textContent = msg;
+      document.getElementById('cubo').classList.toggle('activo');
+    }
+  </script>
+</body>
+</html>
